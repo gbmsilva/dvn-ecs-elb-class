@@ -4,6 +4,12 @@ resource "aws_ecs_service" "this" {
   task_definition = aws_ecs_task_definition.this.arn
   desired_count   = 1
 
+  capacity_provider_strategy {
+    base              = 1
+    weight            = 100
+    capacity_provider = "FARGATE"
+  }
+
   network_configuration {
     subnets          = [aws_subnet.private_1a.id, aws_subnet.private_1b.id]
     assign_public_ip = false

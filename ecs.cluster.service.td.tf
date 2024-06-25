@@ -9,7 +9,7 @@ resource "aws_ecs_task_definition" "this" {
 [
   {
     "name": "portal",
-    "image": "968225077300.dkr.ecr.us-east-1.amazonaws.com/devops-na-nuvem-week/production/frontend",
+    "image": "654654554686.dkr.ecr.us-east-1.amazonaws.com/devops-na-nuvem-week/production/backend",
     "cpu": 1024,
     "memory": 2048,
     "essential": true,
