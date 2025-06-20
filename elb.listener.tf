@@ -1,9 +1,7 @@
 resource "aws_lb_listener" "this" {
   load_balancer_arn = aws_lb.this.arn
-  port              = "443"
-  protocol          = "HTTPS"
-  ssl_policy        = "ELBSecurityPolicy-2016-08"
-  certificate_arn   = aws_acm_certificate.this.arn
+  port              = 80
+  protocol          = "HTTP"
 
   default_action {
     type             = "forward"
